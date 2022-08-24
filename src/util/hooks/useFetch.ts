@@ -13,6 +13,7 @@ type Action<T> =
   | { type: "error"; payload: Error };
 
 const useFetch = <T = unknown>(url?: string): State<T> => {
+  //jika component rerender tidak akan fetching ulang
   const cache = useRef<Cache<T>>({});
 
   //untuk mencegah state update jika component unmounted
