@@ -11,25 +11,27 @@ const List = ({ searchQuery }: IList) => {
     "https://jsonplaceholder.typicode.com/users"
   );
 
+  const filteredList = data?.filter(
+    (user) =>
+      user.name.toLowerCase().includes(searchQuery) ||
+      user.email.toLowerCase().includes(searchQuery)
+  );
+
   if (error) return <div>{error.message}</div>;
-  if (!data) return <div>Loading...</div>;
-  if (data.length === 0) return <div>No match found</div>;
+  if (!filteredList) return <div>Loading...</div>;
+  if (filteredList?.length === 0) return <div>No match found</div>;
 
   return (
     <section className={styles.list}>
-      {data
+      {filteredList
         .filter(
           (user) =>
             user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             user.email.toLowerCase().includes(searchQuery.toLowerCase())
         )
-        .map((user, index) =>
-          user ? (
-            <ListItem user={user} key={index} />
-          ) : (
-            <div>No match found</div>
-          )
-        )}
+        .map((user, index) => (
+          <ListItem user={user} key={index} />
+        ))}
     </section>
   );
 };

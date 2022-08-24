@@ -8,7 +8,7 @@ const Body = ({}: IBody) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value.toLowerCase());
   };
 
   return (
