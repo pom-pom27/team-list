@@ -17,9 +17,10 @@ const List = ({ searchQuery }: IList) => {
       user.email.toLowerCase().includes(searchQuery)
   );
 
-  if (error) return <div>{error.message}</div>;
-  if (!filteredList) return <div>Loading...</div>;
-  if (filteredList?.length === 0) return <div>No match found</div>;
+  if (error) return <div className={styles.center}>{error.message}</div>;
+  if (!filteredList) return <div className={styles.center}>Loading...</div>;
+  if (filteredList?.length === 0)
+    return <div className={styles.center}>No match found</div>;
 
   return (
     <section className={styles.list}>
