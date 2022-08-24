@@ -1,0 +1,16 @@
+.search {
+  display: flex;
+  border-radius: 5px;
+  border: 1px solid var(--dark-grey);
+  input {
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button {
+    border: none;
+    border-radius: 5px;
+  }
+}

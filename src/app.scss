@@ -1,0 +1,36 @@
+@use "/src/index.scss";
+:root {
+  --dark-grey: #444444;
+
+  --grey: #899bbd;
+  --grey-light: rgb(223, 215, 215);
+
+  --white: #fdfdfd;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10px, 10px/16px = 62.5% */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

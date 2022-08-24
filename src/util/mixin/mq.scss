@@ -1,0 +1,37 @@
+/*
+  mixin for media query
+
+  Usage:
+  @use "/src/main";
+
+  
+  @include main.sm {
+    background-color: red;
+  }
+*/
+
+@mixin sm {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
