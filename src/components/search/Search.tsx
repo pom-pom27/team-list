@@ -1,13 +1,18 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, SyntheticEvent } from "react";
 import styles from "./search.module.scss";
 interface ISearch {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Search = ({ onChange }: ISearch) => {
+  const handleForm = (e: SyntheticEvent) => {
+    //disable refresh on submit/enter
+    e.preventDefault();
+  };
+
   return (
     <section>
-      <form action="#" className={styles.search}>
+      <form onSubmit={handleForm} className={styles.search}>
         <input
           onChange={onChange}
           type="text"
