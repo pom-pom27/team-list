@@ -2,6 +2,11 @@
   border: 1px solid var(--grey-light);
   border-radius: 5px;
   padding: 1rem;
+  transition: transform 100ms ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
   .name {
     font-size: 2rem;
     font-weight: bold;
